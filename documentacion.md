@@ -19,4 +19,35 @@ Implementá el sistema de turnos de Órbita de Ideas en index.html, style.css y 
 
 ## Pruebas y versiones
 
-Pendiente hasta implementar y verificar la aplicación.
+Con un turno base de 16:00 a 17:00 para la misma fecha y sala se verificó:
+
+| Solicitud | Resultado |
+| --- | --- |
+| 15:00–16:00 | Aceptada |
+| 17:00–18:00 | Aceptada |
+| 16:00–17:00 | Rechazada |
+| 16:30–17:30 | Rechazada |
+| 16:15–16:45 | Rechazada |
+| 15:30–17:30 | Rechazada |
+| 16:00–17:00 en otra sala | Aceptada |
+| Mismo horario en otra fecha | Aceptada |
+
+También se probaron campos vacíos, horarios fuera de rango, fin igual o anterior al inicio, cancelación, nueva reserva del intervalo liberado, persistencia, orden cronológico y comprobante correspondiente al último turno aceptado. Una solicitud rechazada oculta el comprobante anterior.
+
+Comandos ejecutados: `node --test tests/appointments.test.js` y `node --check script.js`.
+
+## Evidencias
+
+![Agenda](evidencias/agenda.png)
+
+![Aviso de choque](evidencias/aviso-choque.png)
+
+![Comprobante](evidencias/comprobante.png)
+
+## Estado
+
+- [x] Sketch local
+- [x] Reservas y conflictos
+- [x] Cancelación y persistencia
+- [x] Comprobante imprimible
+- [x] Pruebas y evidencias
