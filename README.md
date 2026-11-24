@@ -6,8 +6,10 @@ Sistema local para reservar salas de estudio, detectar superposiciones, cancelar
 
 - Estudiante: Hodaia Yemal
 - Tecnologías: HTML, CSS, JavaScript y localStorage
-- Sketch local: [`evidencias/sketch-turnos.drawio`](evidencias/sketch-turnos.drawio)
+- Sketch local: [`evidencias/sketch-turnos.png`](evidencias/sketch-turnos.png)
 - Documentación completa: [`documentacion.md`](documentacion.md)
+
+![Sketch de turnos abierto en moqups](evidencias/evidencia-editor-moqups.png)
 
 ## Reglas
 

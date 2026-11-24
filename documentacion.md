@@ -5,7 +5,11 @@
 - Estudiante: Hodaia Yemal
 - Tecnologías: HTML, CSS, JavaScript y localStorage
 - Repositorio: https://github.com/2023hodaiayemal-netizen/turnos-club-estudio
-- Sketch previo: `evidencias/sketch-turnos.drawio` y `evidencias/sketch-turnos.png`
+- Sketch previo: `evidencias/sketch-turnos.png`
+
+**Evidencia del editor:** captura auténtica del archivo abierto en diagrams.net/moqups.
+
+![Sketch de turnos abierto en moqups](evidencias/evidencia-editor-moqups.png)
 
 ## Planeamiento
 
