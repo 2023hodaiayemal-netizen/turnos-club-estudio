@@ -2,10 +2,11 @@
   const STORAGE_KEY = 'orbita-de-ideas:turnos:v1';
   const RESOURCES = ['Sala Andrómeda', 'Sala Eclipse', 'Sala Nova'];
   function timeToMinutes(time) { const [hours, minutes] = String(time).split(':').map(Number); return hours * 60 + minutes; }
+  function isValidTime(time) { const match = /^(\d{2}):(\d{2})$/.exec(String(time)); return Boolean(match && Number(match[1]) < 24 && Number(match[2]) < 60); }
   function validateAppointment(item) {
     const required = ['nombre', 'fecha', 'inicio', 'fin', 'recurso', 'motivo'];
     if (required.some((key) => !String(item[key] ?? '').trim())) return { ok: false, message: 'Completá todos los campos.' };
-    if (!/^\d{2}:\d{2}$/.test(item.inicio) || !/^\d{2}:\d{2}$/.test(item.fin)) return { ok: false, message: 'Ingresá horarios válidos.' };
+    if (!isValidTime(item.inicio) || !isValidTime(item.fin)) return { ok: false, message: 'Ingresá horarios válidos.' };
     if (timeToMinutes(item.fin) <= timeToMinutes(item.inicio)) return { ok: false, message: 'El horario de fin debe ser posterior al inicio.' };
     if (!RESOURCES.includes(item.recurso)) return { ok: false, message: 'Elegí una sala válida.' };
     return { ok: true };

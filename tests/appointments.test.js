@@ -22,6 +22,7 @@ test('separa recursos y fechas', () => {
 test('valida campos, orden temporal, almacenamiento y orden cronológico', () => {
   assert.equal(validateAppointment({ ...existing, nombre: '' }).ok, false);
   assert.equal(validateAppointment({ ...existing, inicio: '17:00', fin: '17:00' }).ok, false);
+  assert.equal(validateAppointment({ ...existing, inicio: '25:00', fin: '26:00' }).ok, false);
   assert.deepEqual(normalizeAppointments('roto'), []);
   const later = { ...existing, id: 'later', fecha: '2026-11-26', inicio: '10:00', fin: '11:00' };
   assert.deepEqual(sortAppointments([later, existing]).map((item) => item.id), ['base', 'later']);
